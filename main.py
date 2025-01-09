@@ -39,5 +39,6 @@ for user_id, entries in tqdm(data.items(), desc="Downloading submissions"):
 
     store_excel(entries, user_folder)
     for entry in entries:
+        filename = f"{entry['Score']}_{entry['Task']}_{entry['fileID']}.c"
         # Download the file
         download_file(client, entry['fileID'], user_folder)
